@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"> -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/bootstrap.min.js">
+    </script>
+    <title>MFS100 Sample Cordova</title>
+    <style>
+        .btnSample:hover {
+            background-color: #00b9f5 !important;
+            color:white !important;
+            cursor: pointer;
+            padding:5px;
+        }
+    </style>
+</head>
+<body style="background: #ddd; margin: 0PX; font-family: sans-serif; " onload="onLoad()">
+    <div align="center" style="font-weight: bold; font-size: 32px; color: white; background-color: #012b72; font-family:sans-serif;padding: 5px;">MFS100 Sample Cordova</div>
+
+    <div style="margin-top: 10px; padding: 5px;" align="center">
+        <table>
+            <tr>
+                <td>
+                    <input type="image"alt="Finger not captured yet !" style="width:100px; height: 105px; border: 1px black solid;" id="imgFinger">
+                </td>
+                <td style="padding-left: 10px;">
+                    <div align="center">
+                        <input type="button" class="btnSample" style="width: 150px; background: white; color: #00b9f5; border: 1px solid #00b9f5; padding: 5px; font-size: 16px; " id="btnInit" value="Init">
+                        <input type="button" class="btnSample" style="width: 150px; background: white; color: #00b9f5; border: 1px solid #00b9f5; padding: 5px; font-size: 16px; " id="btnUnInit" value="UnInit">
+                    </div>
+                    <div style="margin-top: 5px;" align="center">
+                        <input type="button" class="btnSample" style="width: 150px; background: white; color: #00b9f5; border: 1px solid #00b9f5; padding: 5px; font-size: 16px; " id="btnStartCapture" value="Start Capture">
+                        <input type="button" class="btnSample" style="width: 150px; background: white; color: #00b9f5; border: 1px solid #00b9f5; padding: 5px; font-size: 16px; " id="btnStopCapture" value="Stop Capture">
+                    </div>
+                    <div style="margin-top: 5px;" align="center">
+                        <input type="button" class="btnSample" style="width: 150px; background: white; color: #00b9f5; border: 1px solid #00b9f5; padding: 5px; font-size: 16px; " id="btnAutoCapture" value="Auto Capture">
+                        <input type="button" class="btnSample" style="width: 150px; background: white; color: #00b9f5; border: 1px solid #00b9f5; padding: 5px; font-size: 16px; " id="btnMatchISO" value="Match ISO">
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 10px; padding-left: 5px; width: 100%; font-size: 15px;"> 
+    	Status: <label id="lblstatus" style="display: inline;"></label> 
+    </div>
+
+    <div style="padding: 5px;">
+        <table style="width: 100%">
+            <tr>
+                <td style="width: 50%; padding-top: 5px; padding-bottom: 5px; font-size: 15px;"> Serial No.: <label id="lblserialno" style="display: inline;"></label> </td>
+                <td style="width: 50%; padding-top: 5px; padding-bottom: 5px; font-size: 15px;"> Width: <label id="lblwidth" style="display: inline;"></label> </td>
+            </tr>
+            <tr>
+                <td style="width: 50%; padding-top: 5px; padding-bottom: 5px; font-size: 15px;"> Height: <label id="lblheight" style="display: inline;"></label> </td>
+                <td style="width: 50%; padding-top: 5px; padding-bottom: 5px; font-size: 15px;"> Make: <label id="lblmake" style="display: inline;"></label> </td>
+            </tr>
+            <tr>
+                <td style="width: 50%; padding-top: 5px; padding-bottom: 5px; font-size: 15px;"> Model: <label id="lblmodel" style="display: inline;"></label> </td>
+                <td style="width: 50%; padding-top: 5px; padding-bottom: 5px; font-size: 15px;"> Certificate: <label id="lblcert" style="display: inline;"></label> </td>
+            </tr>
+            <tr>
+                <td style="width: 50%; padding-top: 5px; padding-bottom: 5px; font-size: 15px;"> Quality: <label id="lblquality" style="display: inline;"></label> </td>
+                <td style="width: 50%; padding-top: 5px; padding-bottom: 5px; font-size: 15px;"> NFIQ: <label id="lblnfiq" style="display: inline;"></label> </td>
+            </tr>
+        </table>
+    </div>
+    
+    <div style="padding-left: 5px; width: 100%; font-size: 15px;"> 
+    	Score: <label id="lblscore" style="display: inline;"></label> 
+    </div>
+    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
